@@ -11,12 +11,6 @@
     <description>工具类</description>
     <url>http://www.shop-centre.com/</url>
 
-    <parent>
-        <groupId>com.liangchao.shop</groupId>
-        <artifactId>shop-centre</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-
     <dependencies>
 
     </dependencies>

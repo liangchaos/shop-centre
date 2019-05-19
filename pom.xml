@@ -17,6 +17,7 @@
 
     <modules>
         <module>shop-util</module>
+        <module>shop-eureka-server</module>
     </modules>
 
     <parent>

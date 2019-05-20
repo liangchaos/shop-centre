@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+    <link type="text/css" rel="stylesheet" href="/css/wap/base.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/wap/web_frame.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/wap/change_module.css"/>
+    <link id="webSkinCss" type="text/css" rel="stylesheet" href="/css/webskin.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/wap_wu.css"/>
+
+    <script src="/js/plug-in/jquery-1.11.3/jquery.js" language="JavaScript"></script>
+
+    <!-- swiper-4.5.0 -->
+    <link type="text/css" rel="stylesheet" href="/js/plug-in/swiper-4.5.0/css/swiper.min.css"/>
+    <script language="JavaScript" src="/js/plug-in/swiper-4.5.0/js/swiper.min.js"></script>
+
+    <!-- Vue -->
+    <script type="text/javascript" src="/js/plug-in/vue-2.6.10/vue.js"></script>
+
+    <script type="text/javascript" src="/js/wap/nav.js"></script>
+    <script type="text/javascript" src="/js/wap/ajax_info.js"></script>
+    <script type="text/javascript" src="/js/wap/public.js"></script>
+
+    <!-- 图标文字 -->
+    <link rel="stylesheet" href="css/tubiao/gwcFont.css">
+    <link rel="stylesheet" href="css/tubiao/indexFont.css">
+    <link rel="stylesheet" href="css/tubiao/qqFont.css">
+    <link rel="stylesheet" href="css/tubiao/helpFont.css">
+    <link rel="stylesheet" href="css/tubiao/telFont.css">
+    <link rel="stylesheet" href="css/tubiao/shopsFont.css">
+    <link rel="stylesheet" href="css/tubiao/classifyFont.css">
+    <link rel="stylesheet" href="css/tubiao/fxFont.css">
+    <link rel="stylesheet" href="css/tubiao/hbqFont.css">
+    <link rel="stylesheet" href="css/tubiao/memberFont.css">
+    <link rel="stylesheet" href="css/tubiao/hykFont.css">
+    <link rel="stylesheet" href="css/tubiao/kfFont.css">
+    <link rel="stylesheet" href="css/tubiao/lyFont.css">
+    <link rel="stylesheet" href="css/tubiao/forumFont.css">
+    <link rel="stylesheet" href="css/tubiao/freeFont.css">
+    <link rel="stylesheet" href="css/tubiao/tryoutFont.css">
+    <link rel="stylesheet" href="css/tubiao/tgFont.css">
+    <link rel="stylesheet" href="css/tubiao/positionFont.css">
+    <link rel="stylesheet" href="css/tubiao/wdFont.css">
+    <link rel="stylesheet" href="css/tubiao/xsgFont.css">
+    <link rel="stylesheet" href="css/tubiao/yyFont.css">
+    <style type="text/css">
+        .mainContainer { overflow: hidden; min-height: 368px; }
+        .swiper-container img {
+            width: 100%;
+            max-height: 230px;
+            }
+        /** 间隔 **/
+        .div_top_br {
+            background-color: #fff;
+            padding: 5px 0px;
+            }
+        /** vue {{}}识别符 **/
+        [v-cloak] {
+            　　display: none
+            }
+    </style>
+</head>
+
+<body id="webBody">
+    <div class="wrapper" id="wrapper" v-cloak>
+        <div class="mainContainer">
+            <!-- 头部轮播图 -->
+            <div class="addContainer q" id="add_container">
+                <div visible="show" class="customModuleRow ">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="/images/source/1.jpg"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/source/2.jpg"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/source/3.jpg"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/source/4.jpg"/>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/source/5.jpg"/>
+                            </div>
+                        </div>
+                        <!-- 如果需要分页器 -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- 如果需要导航按钮 -->
+                        <!--<div class="swiper-button-prev"></div>-->
+                        <!--<div class="swiper-button-next"></div>-->
+
+                        <!-- 如果需要滚动条 -->
+                        <div class="swiper-scrollbar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="div_top_br"></div>
+
+            <!-- 菜单 -->
+            <div class="customModuleRow ">
+                <div class="customModule  customModuleButgroup ">
+                    <div class="Mo Mo_1017" id="Mo_17" motype='17'>
+                        <div class="butgroupModule">
+                            <ul class="butgroupList q">
+                                <li v-for="(entity, index) in menu" id="but_item_5830360" class="butItem  newBbutItem">
+                                    <a data-height="110" class="itemA" :href="entity.href">
+                                        <span class="imgicon" style="left: 0.52%; top:0.82%;" data-picwidth="240" data-picheight="240" data-left="0.52">
+                                            <img :src="entity.src" width="60" height="60">
+                                        </span>
+                                        <span style="left: 0.37%; top:64.55%;" class="butText" data-left="0.8">{{entity.name}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="div_top_br"></div>
+
+    <!--  底部菜单 -->
+    <div class="toolMenuBg" id="tool_menu_bg"></div>
+    <div class="toolMenu" id="tool_menu">
+        <ul class="toolBut q">
+            <li id="toolTel" sorts="13" style=" width:20%;">
+                <a href="tel_3A">
+                    <b class="icon" id="icon_20525">
+                        <img src="/images/wap/toolTel_icon.png"/>
+                    </b>
+                    <strong>电话</strong>
+                </a>
+            </li>
+            <li id="toolTelMessage" sorts="12" style=" width:20%;">
+                <a href="sms_3A">
+                    <b class="icon" id="icon_20526">
+                        <img src="/images/wap/toolMessage_icon.png"/>
+                    </b>
+                    <strong>信息</strong>
+                </a>
+            </li>
+            <li id="toolMap" sorts="11" style=" width:20%;">
+                <a href="wap/map.php?username=wu00006">
+                    <b class="icon" id="icon_20527">
+                        <img src="/images/wap/toolMap_icon.png"/>
+                    </b>
+                    <strong>位置</strong>
+                </a>
+            </li>
+            <li id="toolMember" sorts="10" style=" width:20%;">
+                <a href="dom/denglu.php?username=wu00006&wap=1">
+                    <b class="icon" id="icon_36177">
+                        <img src="/images/wap/toolMember_icon.png"/>
+                    </b>
+                    <strong>会员</strong>
+                </a>
+            </li>
+            <li id="tootMessage" sorts="9" style="display: none; width:20%;">
+                <a href="wap/guest.html?username=wu00006&channel_id=2279093">
+                    <b class="icon" id="icon_44649">
+                        <img src="/images/wap/toolGuestbook_icon.png"/>
+                    </b>
+                    <strong>留言</strong>
+                </a>
+            </li>
+            <li id="toolHome" sorts="8" style=" width:20%;">
+                <a id="index_link" href="lanrenmb/wap_doc/style4.html">
+                    <b class="icon" id="icon_20528">
+                        <img src="/images/wap/toolHome_icon.png"/>
+                    </b>
+                    <strong>首页</strong>
+                </a>
+            </li>
+            <li id="tooltoolDistributionXiaoD" sorts="7" style="display: none; width:20%;">
+                <a href="wap/distribution_shop/check_distribution_status.php?username=wu00006&wap=1">
+                    <b class="icon" id="icon_2305765">
+                        <img src="/images/wap/tooltoolDistributionXiaoD.png"/>
+                    </b>
+                    <strong>分销小店</strong>
+                </a>
+            </li>
+            <li id="toolVoiceSearch" sorts="6" style="display: none; width:20%;">
+                <a href="wap/voicesearch.php?username=wu00006&wap=1" style="display: none;">
+
+                    <b class="icon" id="icon_23057641">
+                        <img src="/images/wap/toolVoiceSearch.png"/>
+                    </b>
+                    <strong>语音</strong>
+                </a>
+            </li>
+            <li id="toolProClass" sorts="5" style="display: none; width:20%;">
+                <a href="wap/proclass.php?username=wu00006&wap=1">
+                    <b class="icon" id="icon_23057631">
+                        <img src="/images/wap/toolProductClass.png"/>
+                    </b>
+                    <strong>分类</strong>
+                </a>
+            </li>
+            <li id="toolQQ" sorts="4" style="display: none; width:20%;">
+                <a href="../wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes">
+                    <b class="icon" id="icon_23057601">
+                        <img src="/images/wap/toolQQ_icon.png"/>
+                    </b>
+                    <strong>QQ</strong>
+                </a>
+            </li>
+            <li id="toolShoppingCar" sorts="3" style="display: none; width:20%;">
+                <a href="dom/sc_shopcar_add.php?username=wu00006&wap=1">
+                    <b class="icon" id="icon_23057591">
+                        <img src="/images/wap/toolShoppingCar_icon.png"/>
+                    </b>
+                    <strong>购物</strong>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <span class="backTop" id="back_top"><em></em></span>
+
+    <!--微名片详细页不显示导航-->
+    <div class="fixedNavBut" id="fixed_nav_but" style="display:block;">
+        <div class="navMoreBut_4">
+            <i class="i-1"></i>
+            <i class="i-2"></i>
+            <i class="i-3"></i>
+            <b class="b-1"></b>
+            <b class="b-2"></b>
+            <b class="b-3"></b>
+        </div>
+    </div>
+
+    <!--  左侧菜单 -->
+    <div id="NMore" class="NMore_1002" state="close">
+        <em class="NMTip"></em>
+        <ul>
+            <li>
+                <a id="foot_index_link" href="/"><span>首页</span></a>
+            </li>
+            <li>
+                <a href="wu00006/wap_single/2279094.html"><span>联系我们</span></a>
+            </li>
+            <li>
+                <a href="wu00006/wap_doc/2279091_0_0_0.html"><span>公司新闻</span></a>
+            </li>
+            <li>
+                <a href="wu00006/wap_pro/2279090_0_0_0.html"><span>公司产品</span></a>
+            </li>
+            <li>
+                <a href="wu00006/wap_ser/2279089_0_0.html"><span>服务项目</span></a>
+            </li>
+            <li>
+                <a href="wu00006/wap_item/list_2279088_0.html"><span>关于我们</span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="Nzz" id="Nzz" style="display: none;"></div>
+
+    <script type="text/javascript">
+        var windowW = $(window).width(), windowH = $(window).height();
+        $(window).resize(function () {
+            setTimeout(function () {
+                ButGroupLeftPosition();
+            }, 500);
+        })
+
+        function ButGroupLeftPosition() {
+            if ($(".butgroupList").length) {
+                var winW = $(window).width();
+                winW = (winW < 640 ? winW : 640);
+                $(".butgroupList").each(function () {
+                    var Lthis_ = $(this), butItme = Lthis_.find(".newBbutItem");
+                    butItme.each(function () {
+                        var this_ = $(this), iLiWidth = this_.width(), aitem = this_.find("a.itemA");
+                        iAHeight = parseInt(aitem.attr("data-height"));
+                        var isReturn = false;
+                        if (this_.find(".butText").length) {
+                            var iFont = this_.find(".butText");
+                            iFont.css({'left': "0px"});
+                            var iFontWidth = iFont.width();
+                            var iFontLeftBfb = parseFloat(iFont.attr("data-left")).toFixed(4);
+                            var iFontLeftPx = (iFontLeftBfb * iLiWidth) - (iFontWidth / 2);
+                            iFont.css({'left': iFontLeftPx + "px"});
+                            isReturn = true;
+                        }
+                        //var time_img = setTimeout(function(){
+                        //if(isReturn == true){
+                        if (this_.find(".imgicon").length || this_.find(".ficon").length) {
+                            if (this_.find(".imgicon").length) {
+                                var iPic = this_.find(".imgicon"),
+                                    iPic_sub = this_.find(".imgicon img");
+                                var w = parseInt(iPic_sub.attr("width"));
+                                if (w > iLiWidth) {
+                                    w = iLiWidth
+                                }
+                            } else if (this_.find(".ficon").length) {
+                                var iPic = this_.find(".ficon");
+                                //var w = iPic.width();
+                                var w = iPic.attr('data-picwidth');
+                            }
+                            var iPicLeftBfb = parseFloat(iPic.attr("data-left")).toFixed(4);
+                            var iPicLeftPx = (iPicLeftBfb * iLiWidth) - (w / 2);
+                            iPic.css({'left': iPicLeftPx + "px"});
+                            //clearInterval(time_img);
+                        }
+                        //}
+                        //},500);
+
+                    });
+                });
+            }
+        }
+
+        $(document).ready(function () {
+            ButGroupLeftPosition();
+
+            var document_h = $(window).height();
+            $("#wrapper").css({"min-height": document_h + 'px'});
+
+            //绑定页面数据
+            var vueObj = new Vue({
+                el: "#wrapper",
+                data: {
+                    //主菜单数据绑定
+                    menu: [{
+                        id: 1,
+                        name: "商户",
+                        src: "/images/menu/blue/1.png",
+                        href: ""
+                    }, {
+                        id: 2,
+                        name: "优惠",
+                        src: "/images/menu/blue/2.png",
+                        href: ""
+                    }, {
+                        id: 3,
+                        name: "折扣",
+                        src: "/images/menu/blue/3.png",
+                        href: ""
+                    }, {
+                        id: 4,
+                        name: "活动",
+                        src: "/images/menu/blue/4.png",
+                        href: ""
+                    }, {
+                        id: 5,
+                        name: "服务",
+                        src: "/images/menu/blue/5.png",
+                        href: ""
+                    }, {
+                        id: 6,
+                        name: "停车",
+                        src: "/images/menu/blue/6.png",
+                        href: ""
+                    }, {
+                        id: 7,
+                        name: "商城",
+                        src: "/images/menu/blue/7.png",
+                        href: ""
+                    }, {
+                        id: 8,
+                        name: "支付",
+                        src: "/images/menu/blue/8.png",
+                        href: ""
+                    }, {
+                        id: 9,
+                        name: "会员",
+                        src: "/images/menu/blue/9.png",
+                        href: ""
+                    }]
+                }
+            });
+
+            /** 轮播图 **/
+            var mySwiper = new Swiper('.swiper-container', {
+                //direction: 'vertical', // 垂直切换选项
+                loop: true, // 循环模式选项
+                autoplay: true,//可选选项，自动滑动
+
+                // 如果需要分页器
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+                // 如果需要前进后退按钮
+//                navigation: {
+//                    nextEl: '.swiper-button-next',
+//                    prevEl: '.swiper-button-prev',
+//                },
+
+                // 如果需要滚动条
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                },
+            });
+        });
+
+    </script>
+</body>
+</html>

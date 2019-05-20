@@ -30,6 +30,7 @@
         <module>shop-hystrix-dashboard</module>
         <module>shop-admin-console</module>
         <module>shop-config-centre</module>
+        <module>shop-web-wap</module>
     </modules>
 
     <!-- Spring Boot 引用 -->

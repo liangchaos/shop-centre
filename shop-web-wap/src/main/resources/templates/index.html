@@ -1,69 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
-    <link type="text/css" rel="stylesheet" href="/css/wap/base.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/wap/web_frame.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/wap/change_module.css"/>
-    <link id="webSkinCss" type="text/css" rel="stylesheet" href="/css/webskin.css"/>
-    <link type="text/css" rel="stylesheet" href="/css/wap_wu.css"/>
-
-    <script src="/js/plug-in/jquery-1.11.3/jquery.js" language="JavaScript"></script>
-
-    <!-- swiper-4.5.0 -->
-    <link type="text/css" rel="stylesheet" href="/js/plug-in/swiper-4.5.0/css/swiper.min.css"/>
-    <script language="JavaScript" src="/js/plug-in/swiper-4.5.0/js/swiper.min.js"></script>
-
-    <!-- Vue -->
-    <script type="text/javascript" src="/js/plug-in/vue-2.6.10/vue.js"></script>
-
-    <script type="text/javascript" src="/js/wap/nav.js"></script>
-    <script type="text/javascript" src="/js/wap/ajax_info.js"></script>
-    <script type="text/javascript" src="/js/wap/public.js"></script>
-
-    <!-- 图标文字 -->
-    <link rel="stylesheet" href="css/tubiao/gwcFont.css">
-    <link rel="stylesheet" href="css/tubiao/indexFont.css">
-    <link rel="stylesheet" href="css/tubiao/qqFont.css">
-    <link rel="stylesheet" href="css/tubiao/helpFont.css">
-    <link rel="stylesheet" href="css/tubiao/telFont.css">
-    <link rel="stylesheet" href="css/tubiao/shopsFont.css">
-    <link rel="stylesheet" href="css/tubiao/classifyFont.css">
-    <link rel="stylesheet" href="css/tubiao/fxFont.css">
-    <link rel="stylesheet" href="css/tubiao/hbqFont.css">
-    <link rel="stylesheet" href="css/tubiao/memberFont.css">
-    <link rel="stylesheet" href="css/tubiao/hykFont.css">
-    <link rel="stylesheet" href="css/tubiao/kfFont.css">
-    <link rel="stylesheet" href="css/tubiao/lyFont.css">
-    <link rel="stylesheet" href="css/tubiao/forumFont.css">
-    <link rel="stylesheet" href="css/tubiao/freeFont.css">
-    <link rel="stylesheet" href="css/tubiao/tryoutFont.css">
-    <link rel="stylesheet" href="css/tubiao/tgFont.css">
-    <link rel="stylesheet" href="css/tubiao/positionFont.css">
-    <link rel="stylesheet" href="css/tubiao/wdFont.css">
-    <link rel="stylesheet" href="css/tubiao/xsgFont.css">
-    <link rel="stylesheet" href="css/tubiao/yyFont.css">
-    <style type="text/css">
-        .mainContainer { overflow: hidden; min-height: 368px; }
-        .swiper-container img {
-            width: 100%;
-            max-height: 230px;
-            }
-        /** 间隔 **/
-        .div_top_br {
-            background-color: #fff;
-            padding: 5px 0px;
-            }
-        /** vue {{}}识别符 **/
-        [v-cloak] {
-            　　display: none
-            }
-    </style>
+    <title>商城主页</title>
 </head>
-
 <body id="webBody">
-    <div class="wrapper" id="wrapper" v-cloak>
+    <!-- 公共引入 -->
+    <div th:include="/public/css::public-css"/>
+
+    <div class="wrapper" id="wrapper">
         <div class="mainContainer">
             <!-- 头部轮播图 -->
             <div class="addContainer q" id="add_container">
@@ -107,12 +53,12 @@
                     <div class="Mo Mo_1017" id="Mo_17" motype='17'>
                         <div class="butgroupModule">
                             <ul class="butgroupList q">
-                                <li v-for="(entity, index) in menu" id="but_item_5830360" class="butItem  newBbutItem">
+                                <li v-cloak v-for="(entity, index) in menu" id="but_item_5830360" class="butItem  newBbutItem">
                                     <a data-height="110" class="itemA" :href="entity.href">
                                         <span class="imgicon" style="left: 0.52%; top:0.82%;" data-picwidth="240" data-picheight="240" data-left="0.52">
                                             <img :src="entity.src" width="60" height="60">
                                         </span>
-                                        <span style="left: 0.37%; top:64.55%;" class="butText" data-left="0.8">{{entity.name}}</span>
+                                        <span v-cloak style="left: 0.37%; top:64.55%;" class="butText" data-left="0.8">{{entity.name}}</span>
                                     </a>
                                 </li>
                             </ul>
@@ -261,6 +207,8 @@
     </div>
     <div class="Nzz" id="Nzz" style="display: none;"></div>
 
+    <!-- 公共引入  -->
+    <div th:include="/public/js::public-js"/>
     <script type="text/javascript">
         var windowW = $(window).width(), windowH = $(window).height();
         $(window).resize(function () {
@@ -316,6 +264,17 @@
             }
         }
 
+        // numberMillis 毫秒
+        function sleep(numberMillis) {
+            var now = new Date();
+            var exitTime = now.getTime() + numberMillis;
+            while (true) {
+                now = new Date();
+                if (now.getTime() > exitTime)
+                    return;
+            }
+        }
+
         $(document).ready(function () {
             ButGroupLeftPosition();
 
@@ -331,7 +290,7 @@
                         id: 1,
                         name: "商户",
                         src: "/images/menu/blue/1.png",
-                        href: ""
+                        href: "/shop/index"
                     }, {
                         id: 2,
                         name: "优惠",
@@ -371,7 +330,7 @@
                         id: 9,
                         name: "会员",
                         src: "/images/menu/blue/9.png",
-                        href: ""
+                        href: "/user/index"
                     }]
                 }
             });
@@ -398,8 +357,9 @@
                     el: '.swiper-scrollbar',
                 },
             });
-        });
 
+            //sleep(1000 * 10);
+        });
     </script>
 </body>
 </html>

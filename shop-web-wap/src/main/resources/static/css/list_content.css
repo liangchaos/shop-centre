@@ -426,6 +426,17 @@
     font-weight: normal;
     margin-bottom: 0.4rem;
     }
+.aui-flex-box h2:after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    /* top: 2px; */
+    left: 1px;
+    width: 8px;
+    height: 41%;
+    background: #398def;
+    /* border-radius: 20px; */
+    }
 .aui-flex-box span {
     padding: 3px;
     color: #507cf7;

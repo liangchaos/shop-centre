@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,target-densitydpi=medium"/>
+    <title>模板页面</title>
+
+</head>
+<body id="webBody">
+    <!-- 公共引入 -->
+    <div th:include="/public/css::public-css"/>
+
+    <!-- 页面 -->
+    <div class="wrapper" id="wrapper">
+
+    </div>
+
+    <!-- 公共引入  -->
+    <div th:include="/public/js::public-js"/>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+    </script>
+</body>
+</html>

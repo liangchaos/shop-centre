@@ -1,0 +1,22 @@
+server:
+  port: 11031
+
+#spring
+spring:
+  application:
+    name: shop-config-client
+
+#info 信息
+info:
+  app:
+    #从pom.xml中获取
+    name: "@project.name@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+    groupId: "@project.groupId@"
+    artifactId: "@project.artifactId@"
+    packaging: "@project.packaging@"
+    description: "@project.description@"
+    href: "@project.url@"
+    port: ${server.port}
+    url: ${eureka.instance.hostname}:${server.port}

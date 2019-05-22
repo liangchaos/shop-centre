@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      uri: http://shop-centre.com:11030/
+      # 远程仓库的分支
+      label: master
+      profile: develop
+      # 文件名
+      name: application

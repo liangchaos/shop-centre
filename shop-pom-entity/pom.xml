@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <groupId>com.liangchao.shop.pom</groupId>
+    <artifactId>shop-pom-entity</artifactId>
+    <name>shop-pom-entity</name>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <description>POM entity 公共服务端引用</description>
+    <url>http://shop-centre.com/</url>
+
+    <!-- 参数定义 -->
+    <properties>
+        <java.version>1.8</java.version>
+        <lombok.version>1.18.8</lombok.version>
+        <hibernate.version>5.3.7.Final</hibernate.version>
+        <shop.centre.version>0.0.1-SNAPSHOT</shop.centre.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

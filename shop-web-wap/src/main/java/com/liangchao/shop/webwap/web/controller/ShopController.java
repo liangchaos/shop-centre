@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 /**
- * Description:商户列表
+ * Description:商户
  * User: Administrator-LiangChao
  * Date: 2019-05-20
  * Time: 17:15

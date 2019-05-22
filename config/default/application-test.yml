@@ -1,12 +1,9 @@
-server:
-  port: 12000
+############################################################
+## default 测试环境公共配置管理
+############################################################
 
+#spring
 spring:
-  application:
-    name: shop-web-wap
-  freemarker:
-      template-loader-path: classpath:/templates/
-      prefer-file-system-access: false
   boot:
       admin:
         client:
@@ -39,17 +36,3 @@ management:
     health:
       show-details: always
 
-#info 信息
-info:
-  app:
-    #从pom.xml中获取
-    name: "@project.name@"
-    version: "@project.version@"
-    spring-boot-version: "@project.parent.version@"
-    groupId: "@project.groupId@"
-    artifactId: "@project.artifactId@"
-    packaging: "@project.packaging@"
-    description: "@project.description@"
-    href: "@project.url@"
-    port: ${server.port}
-    url: ${eureka.instance.hostname}:${server.port}

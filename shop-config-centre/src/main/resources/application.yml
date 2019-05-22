@@ -1,19 +1,26 @@
 server:
   port: 11030
 
-
+#spring
 spring:
   application:
     name: shop-config-centre
-  freemarker:
-      template-loader-path: classpath:/templates/
-      prefer-file-system-access: false
   boot:
       admin:
         client:
           url: http://${eureka.instance.hostname}:11020/
           username: admin
           password: admin
+  #配置中心
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lianchaos/config-centre
+          search-paths: shop/default
+          #username: usp@ufo.com
+          #password: 123456
+      label: master
 
 eureka:
   client:

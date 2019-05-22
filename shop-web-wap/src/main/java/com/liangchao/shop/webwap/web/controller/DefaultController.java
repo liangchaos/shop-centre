@@ -15,4 +15,9 @@ public class DefaultController {
     public String test () {
         return "test";
     }
+
+    @RequestMapping("/test1")
+    public String test1 () {
+        return "index.old";
+    }
 }

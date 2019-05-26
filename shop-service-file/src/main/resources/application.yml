@@ -1,0 +1,33 @@
+server:
+  port: 11040
+#spring
+spring:
+  application:
+    name: shop-service-file
+
+#spring config 配置中心配置无效需要当前添加
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://shop-centre.com:11000/eureka/
+
+#info 信息
+info:
+  app:
+    #从pom.xml中获取
+    name: "@project.name@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+    groupId: "@project.groupId@"
+    artifactId: "@project.artifactId@"
+    packaging: "@project.packaging@"
+    description: "@project.description@"
+    href: "@project.url@"
+    port: ${server.port}
+    url: ${eureka.instance.hostname}:${server.port}
+
+logging:
+  level:
+    root: info
+
+

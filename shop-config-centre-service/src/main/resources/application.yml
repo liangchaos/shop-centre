@@ -1,0 +1,63 @@
+server:
+  port: 11031
+
+#spring
+spring:
+  application:
+    name: shop-config-centre-service
+  boot:
+      admin:
+        client:
+          url: http://${eureka.instance.hostname}:11020/
+          username: admin
+          password: admin
+  #配置中心
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lianchaos/config-centre
+          search-paths: shop/service
+          #username: usp@ufo.com
+          #password: 123456
+      label: master
+
+eureka:
+  client:
+    # 是否注册到eureka
+    registerWithEureka: true
+    # 是否从eureka获取注册信息
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://shop-centre.com:11000/eureka/
+  instance:
+    hostname: shop-centre.com
+    #显示IP
+    prefer-ip-address: true
+    #注册实例 Status 名称 自定义服务名称
+    instance-id: ${spring.application.name}:${server.port}
+
+# 环境配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+#info 信息
+info:
+  app:
+    #从pom.xml中获取
+    name: "@project.name@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"
+    groupId: "@project.groupId@"
+    artifactId: "@project.artifactId@"
+    packaging: "@project.packaging@"
+    description: "@project.description@"
+    href: "@project.url@"
+    port: ${server.port}
+    url: ${eureka.instance.hostname}:${server.port}

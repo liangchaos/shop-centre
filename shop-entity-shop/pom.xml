@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.liangchao.shop.entity</groupId>
-            <artifactId>shop-entity-file</artifactId>
+            <artifactId>shop-entity-default</artifactId>
             <version>${shop.centre.version}</version>
         </dependency>
     </dependencies>

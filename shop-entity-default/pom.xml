@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.liangchao.shop.entity</groupId>
-    <artifactId>shop-entity-file</artifactId>
-    <name>shop-entity-file</name>
+    <artifactId>shop-entity-default</artifactId>
+    <name>shop-entity-default</name>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
-    <description>File 文件管理</description>
+    <description>公共 Entity 管理</description>
     <url>http://shop-centre.com/</url>
 
     <parent>

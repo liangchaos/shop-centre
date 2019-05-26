@@ -38,13 +38,11 @@ if %inType% == 1 (
 	%java% %project_name%-0.0.1-SNAPSHOT.jar
 	echo 启动%project_name%服务完成
 ) else if %inType% == 3 (
-    start http://shop-centre.com:11030/
     set project_name=shop-config-centre-default
 	cd %path%%project_name%\\target\\
 	%java% %project_name%-0.0.1-SNAPSHOT.jar
 	echo 启动%project_name%服务完成
 ) else if %inType% == 4 (
-    start http://shop-centre.com:11031/
     set project_name=shop-config-centre-service
 	cd %path%%project_name%\\target\\
 	%java% %project_name%-0.0.1-SNAPSHOT.jar

@@ -24,13 +24,13 @@
     <modules>
         <module>shop-util</module>
         <module>shop-eureka-server</module>
+        <module>shop-hystrix-dashboard</module>
+        <module>shop-admin-console</module>
 
         <module>shop-pom-service</module>
         <module>shop-pom-web</module>
         <module>shop-pom-entity</module>
 
-        <module>shop-hystrix-dashboard</module>
-        <module>shop-admin-console</module>
         <module>shop-config-centre-default</module>
         <module>shop-config-centre-service</module>
         <module>shop-config-client</module>
@@ -38,9 +38,9 @@
         <module>shop-web-wap</module>
 
         <module>shop-entity-shop</module>
-        <module>shop-entity-file</module>
+        <module>shop-entity-default</module>
 
-        <module>shop-service-file</module>
+        <module>shop-service-default</module>
         <module>shop-service-shop</module>
     </modules>
 
@@ -76,7 +76,7 @@
 
             <dependency>
                 <groupId>com.liangchao.shop.entity</groupId>
-                <artifactId>shop-entity-file</artifactId>
+                <artifactId>shop-entity-default</artifactId>
                 <version>${shop.centre.version}</version>
             </dependency>
         </dependencies>

@@ -20,7 +20,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.liangchao.shop</groupId>
+            <groupId>com.liangchao.shop.entity</groupId>
             <artifactId>shop-entity-file</artifactId>
             <version>${shop.centre.version}</version>
         </dependency>

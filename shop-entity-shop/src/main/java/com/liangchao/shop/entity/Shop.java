@@ -1,6 +1,5 @@
 package com.liangchao.shop.entity;
 
-import com.liangchao.shop.FileManager;
 import com.liangchao.shop.SystemConfig;
 import com.liangchao.shop.enums.ShopType;
 import com.liangchao.shop.enums.StateType;
@@ -9,12 +8,19 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 /**
@@ -28,10 +34,13 @@ import java.util.List;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Accessors(chain = true)
 @Entity
 @Table(name = SystemConfig.DEFAULT_TABLE_PREFIX + "Shop")
 public class Shop implements Serializable {
 
+    @Id
+    @GeneratedValue
     private Long id;//ID
     private String name;//商户名称
     @Enumerated(EnumType.STRING)
@@ -46,7 +55,9 @@ public class Shop implements Serializable {
     private String introduce;//介绍
     private String logo;//logo
 
-    private List<FileManager> picture;//图片
+    @ManyToMany
+    @JoinTable(name = SystemConfig.SYS_INTERMEDIATE_TABLE_PREFIX + "SHOP_FILEMANAGER", joinColumns = {@JoinColumn(name = "SHOP_ID")}, inverseJoinColumns = {@JoinColumn(name = "FILEMANAGER_ID")})
+    private List<FileManager> fileManager = new ArrayList<FileManager> ();//图片
     private Shopowner shopowner;//店长 掌柜
     private Category category;//品类
     private Floor floor;//楼层

@@ -11,7 +11,10 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 /**
  * Description:品类
  * User: Administrator-LiangChao
@@ -25,7 +28,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name = SystemConfig.DEFAULT_TABLE_PREFIX + "Category")
-public class Category {
+public class Category implements Serializable {
+
+    @Id
+    @GeneratedValue
     private Long id;//ID
     private String name;//品类名称
     @Enumerated(EnumType.STRING)

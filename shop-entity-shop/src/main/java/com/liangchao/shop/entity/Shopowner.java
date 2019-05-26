@@ -8,7 +8,10 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 /**
  * Description:店长
  * User: Administrator-LiangChao
@@ -22,8 +25,10 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @Entity
 @Table(name = SystemConfig.DEFAULT_TABLE_PREFIX + "Shopowner")
-public class Shopowner {
+public class Shopowner implements Serializable {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String name;//姓名
     private String sex;//性别

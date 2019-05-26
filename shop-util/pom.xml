@@ -11,8 +11,17 @@
     <description>工具类</description>
     <url>http://shop-centre.com/</url>
 
-    <dependencies>
+    <properties>
+        <spring.boot.version>2.1.5.RELEASE</spring.boot.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
 </project>

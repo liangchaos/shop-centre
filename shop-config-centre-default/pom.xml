@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.liangchao.shop.configcentre</groupId>
-    <artifactId>shop-config-centre</artifactId>
-    <name>shop-config-centre</name>
+    <artifactId>shop-config-centre-default</artifactId>
+    <name>shop-config-centre-default</name>
     <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
-    <description>Config 配置中心平台</description>
+    <description>Config Default配置中心平台</description>
     <url>http://shop-centre.com:11030/</url>
 
     <parent>

@@ -5,5 +5,5 @@ spring:
       # 远程仓库的分支
       label: master
       profile: develop
-      # 文件名
+      # 文件名 可多个
       name: application

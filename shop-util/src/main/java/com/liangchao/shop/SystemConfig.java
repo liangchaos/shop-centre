@@ -12,5 +12,7 @@ public class SystemConfig {
     public static final String DEFAULT_TABLE_PREFIX = "ShopCentre_";
     /** table 系统前缀 **/
     public static final String SYS_TABLE_PREFIX = "Sys_";
+    /** 中间表 **/
+    public static final String SYS_INTERMEDIATE_TABLE_PREFIX = "Intermediate_Table_";
 
 }

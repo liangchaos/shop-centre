@@ -1,6 +1,5 @@
 package com.liangchao.shop.service.service;
 
-import com.liangchao.shop.entity.FileManager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

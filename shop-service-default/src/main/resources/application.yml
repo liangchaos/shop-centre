@@ -3,7 +3,7 @@ server:
 #spring
 spring:
   application:
-    name: shop-service-file
+    name: shop-service-default
 
 #spring config 配置中心配置无效需要当前添加
 eureka:

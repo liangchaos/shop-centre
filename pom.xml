@@ -35,13 +35,17 @@
         <module>shop-config-centre-service</module>
         <module>shop-config-client</module>
 
-        <module>shop-web-wap</module>
-
         <module>shop-entity-shop</module>
         <module>shop-entity-default</module>
+        <module>shop-entity-member</module>
 
         <module>shop-service-default</module>
         <module>shop-service-shop</module>
+        <module>shop-service-member</module>
+
+        <module>shop-web-wap</module>
+        <module>shop-web-admin</module>
+
     </modules>
 
     <!-- Spring Boot 引用 -->

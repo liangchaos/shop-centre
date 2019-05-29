@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 /**
  * Description:文件管理
@@ -42,7 +43,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = SystemConfig.DEFAULT_TABLE_PREFIX + "FileManager")
-public class FileManager {
+public class FileManager implements Serializable{
 
     @Id
     @GeneratedValue

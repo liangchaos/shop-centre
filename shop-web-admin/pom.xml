@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <groupId>com.liangchao.shop.webadmin</groupId>
+    <artifactId>shop-web-admin</artifactId>
+    <name>shop-web-admin</name>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <description>Admin 后端 web端</description>
+    <url>http://shop-centre.com:12010/</url>
+
+    <parent>
+        <groupId>com.liangchao.shop.pom</groupId>
+        <artifactId>shop-pom-web</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../shop-pom-web/pom.xml</relativePath>
+    </parent>
+
+    <dependencies>
+
+    </dependencies>
+
+</project>

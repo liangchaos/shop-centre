@@ -11,10 +11,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import java.util.Date;
 /**
- * Description:Config Server Default配置中心
- * User: Administrator-LiangChao
- * Date: 2019-05-19
- * Time: 15:53
+ * Description:Config Server Default默认配置中心
  * <Br>
  * /{application}/{profile}[/{label}]
  * /{application}-{profile}.yml

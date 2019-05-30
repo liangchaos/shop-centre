@@ -8,37 +8,6 @@ spring:
   freemarker:
       template-loader-path: classpath:/templates/
       prefer-file-system-access: false
-  boot:
-      admin:
-        client:
-          url: http://${eureka.instance.hostname}:11020/
-          username: admin
-          password: admin
-
-eureka:
-  client:
-    # 是否注册到eureka
-    registerWithEureka: true
-    # 是否从eureka获取注册信息
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://shop-centre.com:11000/eureka/
-  instance:
-    hostname: shop-centre.com
-    #显示IP
-    prefer-ip-address: true
-    #注册实例 Status 名称 自定义服务名称
-    instance-id: ${spring.application.name}:${server.port}
-
-# 环境配置
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    health:
-      show-details: always
 
 #info 信息
 info:

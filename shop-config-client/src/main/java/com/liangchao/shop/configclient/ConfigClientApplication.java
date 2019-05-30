@@ -9,7 +9,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import java.util.Date;
 /**
- * Description:Config Server 配置中心客户端
+ * Description:Config Server 配置中心客户端->>测试使用
  * User: Administrator-LiangChao
  * Date: 2019-05-19
  * Time: 15:53

@@ -1,5 +1,6 @@
 package com.liangchao.shop.webwap.domin;
 
+import com.liangchao.shop.webwap.web.Web;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -31,8 +32,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure (HttpSecurity http) throws Exception {
         // @formatter:off
         http.authorizeRequests ()
-                .and ().formLogin ().loginPage ("/login").permitAll ().defaultSuccessUrl ("/index",true)
-                .and ().logout ().logoutUrl ("/logout")
+                //不需要验证请求
+                .antMatchers (Web.MAPPLING_WEB_ADMIN_ROOT+"/code").permitAll ()
+                //请求需要登录验证
+                .anyRequest ().authenticated ()
+                //登录
+                .and ().formLogin ().loginPage (Web.MAPPLING_WEB_ADMIN_ROOT+"/login").permitAll ().defaultSuccessUrl (Web.MAPPLING_WEB_ADMIN_ROOT+"/index",true)
+                //登出
+                .and ().logout ().logoutUrl (Web.MAPPLING_WEB_ADMIN_ROOT+"/logout")
         ;
         // @formatter:on
     }

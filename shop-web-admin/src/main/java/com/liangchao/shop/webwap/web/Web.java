@@ -10,5 +10,6 @@ public final class Web {
 
     /** Admin Mapping 根 **/
     public static final String MAPPLING_WEB_ADMIN_ROOT = "/admins";
-
+    /** 验证码KEY **/
+    public static String SESSION_CODE_KEY = "SESSION_CODE_KEY";
 }

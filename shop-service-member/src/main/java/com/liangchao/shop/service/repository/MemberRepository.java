@@ -2,6 +2,7 @@ package com.liangchao.shop.service.repository;
 
 import com.liangchao.shop.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 import org.springframework.stereotype.Repository;
 /**
  * Description:

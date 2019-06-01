@@ -1,24 +1,12 @@
 package com.liangchao.shop.service.service;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
-import java.util.List;
+import com.sun.xml.internal.bind.v2.model.core.ID;
 /**
  * Description:
  * User: Administrator-LiangChao
  * Date: 2019-05-22
  * Time: 22:40
  */
-public interface MemberService<T> {
+public interface MemberService<T, ID> extends BaseService<T, ID> {
 
-    boolean delete (Long id);
-
-    boolean delete (List<Long> idList);
-
-    T findById (Long id);
-
-    Page<T> findByList (Pageable pageable, T entity);
-
-    boolean sava (T entity);
 }

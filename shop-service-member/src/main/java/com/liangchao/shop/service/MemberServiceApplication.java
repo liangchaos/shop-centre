@@ -28,11 +28,6 @@ import java.util.Date;
 @EntityScan(basePackages = {"com.liangchao.shop.entity"})
 public class MemberServiceApplication {
 
-    @Value("${spring.datasource.url}")
-    private String url;
-    @Value("${spring.client.serviceUrl.defaultZone}")
-    private String defaultZone;
-
     public static void main (String[] args) {
         Date startDate = new Date ();
 

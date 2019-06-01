@@ -47,7 +47,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     /** 过滤资源配置 **/
     @Override
     public void configure (WebSecurity web) throws Exception {
-        web.ignoring ().antMatchers ("/files/**", "/js/**", "/css/**", "/images/**", "/**/favicon.ico");
+        // @formatter:off
+        web.ignoring ().antMatchers (
+                "/fonts/**",
+                "/files/**",
+                "/js/**",
+                "/css/**",
+                "/images/**",
+                "/**/favicon.ico"
+        );
+        // @formatter:on
     }
 
     /** 拦截器配置 **/
@@ -56,9 +65,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // @formatter:off
         http.authorizeRequests ()
                 //不需要验证请求
-                .antMatchers (Web.MAPPLING_WEB_ADMIN_ROOT+"/code").permitAll ()
+                .antMatchers (
+                        Web.MAPPLING_WEB_ADMIN_ROOT+"/code"
+                ).permitAll ()
                 //请求需要登录验证
-                .anyRequest ().authenticated ()
+                //.anyRequest ().authenticated ()
                 //登录
                 .and ().formLogin ().loginPage (Web.MAPPLING_WEB_ADMIN_ROOT+"/login")
                                     .failureForwardUrl (Web.MAPPLING_WEB_ADMIN_ROOT+"/login?error")
@@ -83,8 +94,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.addFilterAfter (new DefaultAfterFilter (), SessionManagementFilter.class);
 
         //登录拦截器
-        http.addFilterBefore (new MyFilterSecurityInterceptor (), FilterSecurityInterceptor.class)
-                //springsecurity4自动开启csrf(跨站请求伪造)与restful冲突
-                .csrf ().disable ();
+        // http.addFilterBefore (new MyFilterSecurityInterceptor (), FilterSecurityInterceptor.class)
+        //         //springsecurity4自动开启csrf(跨站请求伪造)与restful冲突
+        //         .csrf ().disable ();
     }
 }

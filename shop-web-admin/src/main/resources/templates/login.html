@@ -49,10 +49,10 @@
                         </div>
                         <form action="/admins/login" method="post">
                             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-                            <input type="text" id="userName" class="user" name="userName" placeholder="账号" required="">
-                            <input type="password" id="passWord" name="passWord" class="lock" placeholder="密码" required="">
+                            <input type="text" value="1111" id="userName" class="user" name="userName" placeholder="账号" required="">
+                            <input type="password" value="2222" id="passWord" name="passWord" class="lock" placeholder="密码" required="">
                             <div style="position: relative;">
-                                <input type="text" id="code" name="code" class="lock" placeholder="验证码" maxlength="6" required="">
+                                <input type="text" value="3333" id="code" name="code" class="lock" placeholder="验证码" maxlength="6" required="">
                                 <img src="/images/code.jpg" id="codeImage" class="codeImage" title="验证码">
                             </div>
                             <div class="forgot-grid">

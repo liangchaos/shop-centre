@@ -43,7 +43,7 @@ public class MyErrorController implements ErrorController {
             put ("code", statusCode);
             put ("path", request.getRequestURI ());
         }});
-        modelAndView.setViewName ("syserror");
+        modelAndView.setViewName ("404");
         return modelAndView;
 
     }

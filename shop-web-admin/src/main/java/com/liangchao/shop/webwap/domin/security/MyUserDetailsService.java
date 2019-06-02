@@ -2,10 +2,15 @@ package com.liangchao.shop.webwap.domin.security;
 
 import com.liangchao.shop.util.Log;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Description:加载验证用户信息 获取角色信息 获取操作权限信息
  * User: Administrator-LiangChao
@@ -36,6 +41,10 @@ public class MyUserDetailsService implements UserDetailsService {
         //         true,//账户未锁定为true
         //         authorities);
 
-        return null;
+        List<SimpleGrantedAuthority> authorities = new ArrayList<> ();
+        //对应的权限添加
+        authorities.add (new SimpleGrantedAuthority ("ROLE_USER"));
+        User anyUser = new User (username, "3333", authorities);
+        return anyUser;
     }
 }

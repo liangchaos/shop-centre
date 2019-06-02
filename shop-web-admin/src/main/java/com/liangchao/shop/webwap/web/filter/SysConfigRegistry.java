@@ -26,6 +26,6 @@ public class SysConfigRegistry implements Filter {
 
         }
 
-        chain.doFilter (request, response);
+        chain.doFilter (httpServletReques, response);
     }
 }

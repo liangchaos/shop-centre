@@ -8,9 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.web.session.SessionManagementFilter;
 /**
  * Description: Security 安全框架配置
  * User: Administrator-LiangChao
@@ -38,10 +37,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure (AuthenticationManagerBuilder auth) throws Exception {
         auth
+                //添加 额外信息验证
+                .authenticationProvider (new MyAuthenticationProvider ())
                 //实现 userDetailsService 获取用户 角色 权限的实现类
                 .userDetailsService (userDetailsService)
                 //密码加密解密处理
-                .passwordEncoder (new MyPasswordEncoder ());
+                //.passwordEncoder (new MyPasswordEncoder ());
+                .passwordEncoder (new BCryptPasswordEncoder ());
     }
 
     /** 过滤资源配置 **/
@@ -66,10 +68,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests ()
                 //不需要验证请求
                 .antMatchers (
-                        Web.MAPPLING_WEB_ADMIN_ROOT+"/code"
+                        Web.MAPPLING_WEB_ADMIN_ROOT+"/code",
+                        Web.MAPPLING_WEB_ADMIN_ROOT+"/codeError"
                 ).permitAll ()
                 //请求需要登录验证
-                //.anyRequest ().authenticated ()
+                .anyRequest ().authenticated ()
                 //登录
                 .and ().formLogin ().loginPage (Web.MAPPLING_WEB_ADMIN_ROOT+"/login")
                                     .failureForwardUrl (Web.MAPPLING_WEB_ADMIN_ROOT+"/login?error")
@@ -79,6 +82,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                                     //.failureHandler (new MyFailureHandler())
                                     .permitAll ()
                                     .defaultSuccessUrl (Web.MAPPLING_WEB_ADMIN_ROOT+"/index",true)
+                                    //额外参数 如验证码
+                                    .authenticationDetailsSource (new MyAuthenticationDetailsSource())
                 //登出
                 .and ().logout ().logoutUrl (Web.MAPPLING_WEB_ADMIN_ROOT+"/logout")
                                  .logoutSuccessUrl(Web.MAPPLING_WEB_ADMIN_ROOT+"/index")
@@ -90,12 +95,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // @formatter:on
 
         //添加拦截器 FilterComparator->filterToOrder 中过滤器
-        http.addFilterBefore (new DefaultBeforeFilter (), UsernamePasswordAuthenticationFilter.class);
-        http.addFilterAfter (new DefaultAfterFilter (), SessionManagementFilter.class);
+        // http.addFilterBefore (new DefaultBeforeFilter (), UsernamePasswordAuthenticationFilter.class);
+        // http.addFilterAfter (new DefaultAfterFilter (), SessionManagementFilter.class);
+        http.addFilterBefore (new MyAuthenticationProviderFilter (), UsernamePasswordAuthenticationFilter.class);
 
         //登录拦截器
         // http.addFilterBefore (new MyFilterSecurityInterceptor (), FilterSecurityInterceptor.class)
         //         //springsecurity4自动开启csrf(跨站请求伪造)与restful冲突
         //         .csrf ().disable ();
     }
+
 }

@@ -19,6 +19,10 @@ public class HttpEnvironment {
         return servletRequestAttributes.getRequest ();
     }
 
+    public static Object request (String key) {
+        return request ().getAttribute (key);
+    }
+
     public static HttpServletRequest response () {
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes ();
         return (HttpServletRequest) servletRequestAttributes.getResponse ();
@@ -28,8 +32,16 @@ public class HttpEnvironment {
         return request ().getServletContext ();
     }
 
+    public static Object servletContext (String key) {
+        return servletContext ().getAttribute (key);
+    }
+
     public static HttpSession session () {
         return request ().getSession ();
+    }
+
+    public static Object session (String key) {
+        return session ().getAttribute (key);
     }
 
     /**

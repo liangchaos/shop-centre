@@ -16,7 +16,9 @@ public class MyPasswordEncoder implements PasswordEncoder {
 
     @Override
     public boolean matches (CharSequence rawPassword, String encodedPassword) {
-        return false;
+        System.out.println ("rawPassword=>" + rawPassword + "  encodedPassword=>" + encodedPassword);
+        //验证密码
+        return true;
     }
 
     @Override

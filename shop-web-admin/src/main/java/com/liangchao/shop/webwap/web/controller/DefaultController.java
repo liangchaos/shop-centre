@@ -31,8 +31,15 @@ public class DefaultController {
         VerifyCode.outputImage (112, 40, response.getOutputStream (), verifyCode);
     }
 
+    @RequestMapping("/codeError")
+    public String codeError (HttpServletRequest request) {
+        request.setAttribute ("codeError", "验证码错误");
+        return "login";
+    }
+
     @RequestMapping({"/", "/index", "/home"})
     public String index () {
+        System.out.println ("index 首页");
         return "index";
     }
 
